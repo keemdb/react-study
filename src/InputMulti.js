@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class InputMulti extends Component {
   state = {
     national: "",
-    city: ""
+    city: "",
+    contry: ""
   };
 
   handleChange = e => {
@@ -19,7 +20,7 @@ class InputMulti extends Component {
       padding: "10px"
     };
 
-    const { national, city } = this.state;
+    const { national, city, contry } = this.state;
 
     return (
       <div style={style}>
@@ -37,8 +38,14 @@ class InputMulti extends Component {
           placeholder="도시"
           onChange={this.handleChange}
         />
+        <input
+          name="contry"
+          value={contry}
+          placeholder="동네"
+          onChange={this.handleChange}
+        />
         <p>
-          {national}의 수도는 {city}입니다.
+          {national}의 수도는 {city}이고 우리 동네는 {contry}입니다.
         </p>
       </div>
     );
