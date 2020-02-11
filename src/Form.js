@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class AddArr extends Component {
+class Form extends Component {
   id = 1;
   state = {
     user: "",
@@ -16,6 +16,7 @@ class AddArr extends Component {
   };
 
   handleInsert = e => {
+    e.preventDefault();
     const { user, pass, list } = this.state;
     this.setState({
       user: "",
@@ -28,23 +29,25 @@ class AddArr extends Component {
   render() {
     const { user, pass, list } = this.state;
     return (
-      <div className="test1">
+      <div className="test2">
         <h1>{this.props.title}</h1>
         <h2>{this.props.sub}</h2>
-        <input
-          name="user"
-          value={user}
-          placeholder="ID"
-          onChange={this.handleChange}
-        />
-        <input
-          name="pass"
-          value={pass}
-          type="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <button onClick={this.handleInsert}>확인</button>
+        <form onSubmit={this.handleInsert}>
+          <input
+            name="user"
+            value={user}
+            placeholder="ID"
+            onChange={this.handleChange}
+          />
+          <input
+            name="pass"
+            value={pass}
+            type="password"
+            placeholder="Password"
+            onChange={this.handleChange}
+          />
+          <button type="submit">확인</button>
+        </form>
         <p>
           ID: {user}, PW: {pass}
         </p>
@@ -61,4 +64,4 @@ class AddArr extends Component {
   }
 }
 
-export default AddArr;
+export default Form;

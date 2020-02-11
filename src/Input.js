@@ -13,9 +13,9 @@ class Input extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Test 2</h1>
-        <h2>Input</h2>
+      <div className="test1">
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.sub}</h2>
         <input
           value={this.state.national}
           placeholder="국적"

@@ -15,17 +15,11 @@ class InputMulti extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: "#eee",
-      padding: "10px"
-    };
-
     const { national, city, contry } = this.state;
-
     return (
-      <div style={style}>
-        <h1>Test 3</h1>
-        <h2>Input Multiple</h2>
+      <div className="test2">
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.sub}</h2>
         <input
           name="national"
           value={national}

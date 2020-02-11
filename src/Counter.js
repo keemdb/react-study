@@ -18,15 +18,10 @@ class Counter extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: "#eee",
-      padding: "10px"
-    };
-
     return (
-      <div style={style}>
-        <h1>Test 1</h1>
-        <h2>Counter</h2>
+      <div className="test2">
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.sub}</h2>
         <p>{this.state.num}</p>
         <button onClick={this.handleIncrease}>추가</button>
         <button onClick={this.handleDecrease}>감소</button>

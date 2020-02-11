@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import "./styles.css";
 
-class AddArr extends Component {
+class Review extends Component {
   id = 1;
   state = {
-    user: "",
-    pass: "",
+    national: "",
+    city: "",
     list: []
   };
-
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -16,43 +16,36 @@ class AddArr extends Component {
   };
 
   handleInsert = e => {
-    const { user, pass, list } = this.state;
+    const { national, city, list } = this.state;
     this.setState({
-      user: "",
-      pass: "",
-      list: list.concat({ id: this.id, user, pass })
+      national: "",
+      city: "",
+      list: list.concat({ id: this.id, national, city })
     });
-    this.id += 1;
   };
 
   render() {
-    const { user, pass, list } = this.state;
+    const { national, city, list } = this.state;
     return (
-      <div className="test1">
+      <div className="review">
         <h1>{this.props.title}</h1>
-        <h2>{this.props.sub}</h2>
         <input
-          name="user"
-          value={user}
-          placeholder="ID"
+          name="national"
+          value={national}
+          placeholder="국적"
           onChange={this.handleChange}
         />
         <input
-          name="pass"
-          value={pass}
-          type="password"
-          placeholder="Password"
+          name="city"
+          value={city}
+          placeholder="도시"
           onChange={this.handleChange}
         />
         <button onClick={this.handleInsert}>확인</button>
-        <p>
-          ID: {user}, PW: {pass}
-        </p>
-        <h4>User List</h4>
         <ul>
           {list.map(item => (
             <li key={item.id}>
-              ID: {item.user}, PW: {item.pass}
+              id: {item.national} pw: {item.city}
             </li>
           ))}
         </ul>
@@ -61,4 +54,4 @@ class AddArr extends Component {
   }
 }
 
-export default AddArr;
+export default Review;

@@ -1,4 +1,23 @@
+body {
+  padding: 0;
+  margin: 0;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.review {
+  background-color: #5ab190;
+  padding: 20px;
+}
+
+.test2 {
+  background-color: #eee;
+  padding: 20px;
+}
+
+.test1 {
+  background-color: #ccc;
+  padding: 20px;
 }
