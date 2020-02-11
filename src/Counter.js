@@ -10,6 +10,7 @@ class Counter extends Component {
       num: this.state.num + 1
     });
   };
+
   handleDecrease = () => {
     this.setState({
       num: this.state.num - 1
@@ -17,9 +18,15 @@ class Counter extends Component {
   };
 
   render() {
+    const style = {
+      backgroundColor: "#eee",
+      padding: "10px"
+    };
+
     return (
-      <div>
-        <h1>Counter</h1>
+      <div style={style}>
+        <h1>Test 1</h1>
+        <h2>Counter</h2>
         <p>{this.state.num}</p>
         <button onClick={this.handleIncrease}>추가</button>
         <button onClick={this.handleDecrease}>감소</button>
