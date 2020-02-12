@@ -18,7 +18,7 @@ class Homework extends Component {
     console.log(userpw.length);
     return (
       <div className="homework">
-        <h1>{this.props.title}</h1>
+        <h1>{this.props.title}1</h1>
         <input
           name="userid"
           placeholder="ID"
