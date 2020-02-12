@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
-class Review extends Component {
+class RefDom extends Component {
   state = {
     userid: "",
     userpw: "",
     list: []
   };
   id: 1;
+  useridInput = React.createRef();
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -24,25 +25,29 @@ class Review extends Component {
       list: list.concat({ id: this.id, userid, userpw })
     });
     this.id += 1;
+    if (!this.useridInput.current) return;
+    this.useridInput.current.focus();
   };
 
   render() {
     const { userid, userpw, list } = this.state;
     return (
-      <div className="review">
+      <div className="test1">
         <h1>{this.props.title}</h1>
+        <h2>{this.props.sub}</h2>
         <form onSubmit={this.handleInsert}>
           <input
             name="userid"
-            value={userid}
             placeholder="ID"
+            value={userid}
             onChange={this.handleChange}
+            ref={this.usernameInput}
           />
           <input
             name="userpw"
+            placeholder="Password"
             type="password"
             value={userpw}
-            placeholder="Password"
             onChange={this.handleChange}
           />
           <button type="submit">ok</button>
@@ -59,4 +64,4 @@ class Review extends Component {
   }
 }
 
-export default Review;
+export default RefDom;

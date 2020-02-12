@@ -7,6 +7,10 @@ body {
   text-align: center;
 }
 
+.homework {
+  background-color: #e7aace;
+  padding: 20px;
+}
 .review {
   background-color: #5ab190;
   padding: 20px;
