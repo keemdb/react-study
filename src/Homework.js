@@ -15,7 +15,6 @@ class Homework extends Component {
 
   render() {
     const { userid, userpw } = this.state;
-    console.log(userpw.length);
     return (
       <div className="homework">
         <h1>{this.props.title}</h1>
@@ -32,8 +31,13 @@ class Homework extends Component {
           value={userpw}
           onChange={this.handleChange}
         />
-        <button type="submit" disabled>
+        <button name="btn" type="submit">
           Sign in
+          {
+            userpw.length < 6
+            ? console.log('ok')
+            : console.log('no')
+          }
         </button>
       </div>
     );
